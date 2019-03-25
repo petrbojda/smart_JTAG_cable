@@ -134,3 +134,9 @@ dismissDialog("Open Project"); // bx (cp)
 // HMemoryUtils.trashcanNow. Engine heap size: 1,028 MB. GUI used memory: 47 MB. Current time: 3/25/19, 3:26:42 PM CET
 // TclEventType: DG_GRAPH_STALE
 // TclEventType: FILE_SET_CHANGE
+// HMemoryUtils.trashcanNow. Engine heap size: 1,044 MB. GUI used memory: 48 MB. Current time: 3/25/19, 3:56:42 PM CET
+// HMemoryUtils.trashcanNow. Engine heap size: 1,044 MB. GUI used memory: 48 MB. Current time: 3/25/19, 4:26:42 PM CET
+// HMemoryUtils.trashcanNow. Engine heap size: 1,044 MB. GUI used memory: 47 MB. Current time: 3/25/19, 4:56:42 PM CET
+// TclEventType: DG_GRAPH_STALE
+// TclEventType: FILE_SET_CHANGE
+// HMemoryUtils.trashcanNow. Engine heap size: 1,084 MB. GUI used memory: 47 MB. Current time: 3/25/19, 5:03:33 PM CET
