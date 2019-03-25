@@ -6,7 +6,7 @@
 -- Author     : Petr Bojda  <petr.bojda@urc-systems.cz>
 -- Company    : URC Systems, s.r.o.
 -- Created    : 2019-02-17
--- Last update: 2019-03-24
+-- Last update: 2019-03-25
 -- Platform   : 
 -- Standard   : VHDL'08
 -------------------------------------------------------------------------------
@@ -33,62 +33,42 @@ use ieee.Numeric_Std_Unsigned.all;
 
 entity jtag_engine is
   port (
-    rst_n            : in  std_logic;
-    clk_in           : in  std_logic;
-    -- data ports
-    spi_tdata_array  : in  spi_data_array_type;
-    spi_rdata_array  : out spi_data_array_type;
-    spi_addr_array   : in  spi_address_array_type;
-    -- transaction config ports
-    spi_ss_select    : in  std_logic_vector(2 downto 0);
-    num_data_bytes   : in  std_logic_vector(4 downto 0);
-    num_transactions : in  std_logic_vector(1 downto 0);
-    spi_rw_mode      : in  std_logic;
-    -- handshake ports - control of the SPI-FSM
-    dev_ready        : out std_logic;
-    rdata_ready      : out std_logic;
-    cfg_recved       : out std_logic;
-    tdata_recved     : out std_logic;
-    tdata_sent       : out std_logic;
-    n_of_trans_read  : out std_logic_vector(1 downto 0);
-    n_of_bits_read   : out std_logic_vector(3 downto 0);  -- no value assigned
-    n_of_trans_rem   : out std_logic_vector(1 downto 0);
-    cfg_valid        : in  std_logic;
-    tdata_valid      : in  std_logic;
-    rdata_read       : in  std_logic;
-    -- SPI ports
-    spi_ss           : out std_logic_vector(2 downto 0);
-    spi_ss_encoder   : out std_logic;
-    spi_exp_reset    : out std_logic;
-    spi_clk          : out std_logic;
-    spi_miso         : in  std_logic;
-    spi_mosi         : out std_logic);
+    rst_n         : in  std_logic;
+    clk_in        : in  std_logic;
+    enable_in     : in  std_logic;
+    done_out      : out std_logic;
+    -- state and data vector ports
+    length_vector : in  std_logic_vector(31 downto 0);
+    tms_vector    : in  std_logic_vector(31 downto 0);
+    tdi_vector    : in  std_logic_vector(31 downto 0);
+    tdo_vector    : in  std_logic_vector(31 downto 0);
+    -- JTAG ports
+    jtag_tck      : out std_logic;
+    jtag_tms      : out std_logic;
+    jtag_tdi      : out std_logic;
+    jtag_tdo      : in  std_logic
+    );
 end entity jtag_engine;
 
 architecture behavi of jtag_engine is
+ 
+ signal enable_d    : std_logic 
+ signal enable_red  : std_logic 
+ signal tck_en      : std_logic 
+ signal tck_i       : std_logic 
+ signal done_i      : std_logic 
+ signal tck_count   : std_logic_vector ( 7 downto 0); 
+ signal bit_count   : std_logic_vector (31 downto 0); 
+ signal tms_output  : std_logic_vector (31 downto 0); 
+ signal tdi_output  : std_logic_vector (31 downto 0); 
+ signal tdo_capture : std_logic_vector (31 downto 0);   
 
-  signal spi_data_count  : std_logic_vector(4 downto 0);
-  signal spi_addr_count  : std_logic_vector(2 downto 0);
-  signal spi_trans_count : std_logic_vector(1 downto 0);
-
-  signal spi_addr_reg  : std_logic_vector(7 downto 0);
-  signal spi_tdata_reg : std_logic_vector(31 downto 0);
-  signal spi_rdata_reg : std_logic_vector(31 downto 0);
-
-  signal r_tdata_array : spi_data_array_type;
-  signal r_rdata_array : spi_data_array_type;
-  signal r_addr_array  : spi_address_array_type;
-
-  signal spi_rw_mode_buff : std_logic;  --TODO: check when it gets its
-                                        --value and wheter it is or it is
-                                        --not correct !!!!!!!!!!!!!!!
-
-  signal spi_ss_select_buff    : std_logic_vector(2 downto 0);
-  signal num_data_bytes_buff   : std_logic_vector(4 downto 0);
-  signal num_transactions_buff : std_logic_vector(1 downto 0);
-
-  type main_fsm_type is (IDLE, CFG_IN, DATA_IN, N_O_TRANS_DECREMENTING, DATA_PREP,
-                         SPI_TRANSACTION, SPI_ADDRESS_OUT, DATA_TO_MASTER);
+ signal tdo_buffer   : std_logic_vector (31 downto 0);
+ signal index        : std_logic_vector (4 downto 0);        
+ signal tck_pulse    : std_logic;
+ signal tdo_capture2 : std_logic_vector (31 downto 0);
+ 
+  type main_fsm_type is (IDLE, TCKL, TCKH);
   signal main_fsm : main_fsm_type;
 
 
@@ -115,6 +95,8 @@ begin  -- architecture behavi
   -----------------------------------------------------------------------------
   -- FSM - main control and SPI Tx process running on a rising edge
   -----------------------------------------------------------------------------
+
+  
   spi_tx : process (clk_in, rst_n) is
   begin  -- process spi_inoutregister
     if rst_n = '0' then

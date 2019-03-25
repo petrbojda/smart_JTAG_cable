@@ -1,0 +1,136 @@
+/*
+
+Xilinx Vivado v2018.3 (64-bit) [Major: 2018, Minor: 3]
+SW Build: 2405991 on Thu Dec  6 23:36:41 MST 2018
+IP Build: 2404404 on Fri Dec  7 01:43:56 MST 2018
+
+Process ID (PID): 3285
+License: Customer
+
+Current time: 	Mon Mar 25 10:55:15 CET 2019
+Time zone: 	Central European Standard Time (Europe/Prague)
+
+OS: Ubuntu
+OS Version: 4.18.0-16-generic
+OS Architecture: amd64
+Available processors (cores): 4
+
+Display: :0
+Screen size: 1920x1200
+Screen resolution (DPI): 96
+Available screens: 2
+Available disk space: 312 GB
+Default font: family=Dialog,name=Dialog,style=plain,size=12
+
+Java version: 	9.0.4 64-bit
+Java home: 	/opt/Xilinx/Vivado/2018.3/tps/lnx64/jre9.0.4
+Java executable location: 	/opt/Xilinx/Vivado/2018.3/tps/lnx64/jre9.0.4/bin/java
+Java initial memory (-Xms): 	128 MB
+Java maximum memory (-Xmx):	 3 GB
+
+
+User name: 	petr
+User home directory: /home/petr
+User working directory: /home/petr/Projects/fpga/redpitaya/wrk/Smart_JTAG_cable/rtl/vivado
+User country: 	US
+User language: 	en
+User locale: 	en_US
+
+RDI_BASEROOT: /opt/Xilinx/Vivado
+HDI_APPROOT: /opt/Xilinx/Vivado/2018.3
+RDI_DATADIR: /opt/Xilinx/Vivado/2018.3/data
+RDI_BINDIR: /opt/Xilinx/Vivado/2018.3/bin
+
+Vivado preferences file location: /home/petr/.Xilinx/Vivado/2018.3/vivado.xml
+Vivado preferences directory: /home/petr/.Xilinx/Vivado/2018.3/
+Vivado layouts directory: /home/petr/.Xilinx/Vivado/2018.3/layouts
+PlanAhead jar file location: 	/opt/Xilinx/Vivado/2018.3/lib/classes/planAhead.jar
+Vivado log file location: 	/home/petr/Projects/fpga/redpitaya/wrk/Smart_JTAG_cable/rtl/vivado/vivado.log
+Vivado journal file location: 	/home/petr/Projects/fpga/redpitaya/wrk/Smart_JTAG_cable/rtl/vivado/vivado.jou
+Engine tmp dir: 	./.Xil/Vivado-3285-petr-dell
+
+Xilinx Environment Variables
+----------------------------
+XILINX: /opt/Xilinx/Vivado/2018.3/ids_lite/ISE
+XILINXD_LICENSE_FILE: /home/petr/.Xilinx/Xilinx.lic
+XILINX_DSP: /opt/Xilinx/Vivado/2018.3/ids_lite/ISE
+XILINX_PLANAHEAD: /opt/Xilinx/Vivado/2018.3
+XILINX_SDK: /opt/Xilinx/SDK/2018.3
+XILINX_VIVADO: /opt/Xilinx/Vivado/2018.3
+XILINX_VIVADO_HLS: /opt/Xilinx/Vivado/2018.3
+
+
+GUI allocated memory:	128 MB
+GUI max memory:		3,072 MB
+Engine allocated memory: 776 MB
+
+Copyright 1986-2018 Xilinx, Inc. All Rights Reserved.
+
+*/
+
+// TclEventType: START_GUI
+// Tcl Message: start_gui 
+// HMemoryUtils.trashcanNow. Engine heap size: 782 MB. GUI used memory: 45 MB. Current time: 3/25/19, 10:55:17 AM CET
+// HMemoryUtils.trashcanNow. Engine heap size: 784 MB. GUI used memory: 46 MB. Current time: 3/25/19, 11:25:17 AM CET
+// [GUI Memory]: 52 MB (+51599kb) [00:33:35]
+// [Engine Memory]: 784 MB (+671087kb) [00:33:35]
+// HMemoryUtils.trashcanNow. Engine heap size: 785 MB. GUI used memory: 46 MB. Current time: 3/25/19, 11:55:17 AM CET
+// [GUI Memory]: 79 MB (+25870kb) [01:15:16]
+// HMemoryUtils.trashcanNow. Engine heap size: 785 MB. GUI used memory: 42 MB. Current time: 3/25/19, 12:25:17 PM CET
+// [GUI Memory]: 90 MB (+7318kb) [01:56:56]
+selectList(PAResourceQtoS.SyntheticaGettingStartedView_RECENT_PROJECTS, "/home/petr/Projects/fpga/redpitaya/wrk/Smart_JTAG_cable/rtl/vivado/smart_jtag_cable.xpr", 0); // q (Q, cp)
+// [GUI Memory]: 94 MB (+144kb) [01:59:55]
+// bx (cp):  Open Project : addNotify
+// Opening Vivado Project: /home/petr/Projects/fpga/redpitaya/wrk/Smart_JTAG_cable/rtl/vivado/smart_jtag_cable.xpr. Version: Vivado v2018.3 
+// TclEventType: DEBUG_PROBE_SET_CHANGE
+// Tcl Message: open_project /home/petr/Projects/fpga/redpitaya/wrk/Smart_JTAG_cable/rtl/vivado/smart_jtag_cable.xpr 
+// TclEventType: MSGMGR_MOVEMSG
+// TclEventType: FILE_SET_NEW
+// TclEventType: RUN_COMPLETED
+// TclEventType: RUN_CURRENT
+// TclEventType: PROJECT_DASHBOARD_NEW
+// TclEventType: PROJECT_DASHBOARD_GADGET_NEW
+// TclEventType: PROJECT_DASHBOARD_GADGET_CHANGE
+// TclEventType: PROJECT_DASHBOARD_GADGET_NEW
+// TclEventType: PROJECT_DASHBOARD_GADGET_CHANGE
+// TclEventType: PROJECT_DASHBOARD_GADGET_NEW
+// TclEventType: PROJECT_DASHBOARD_GADGET_CHANGE
+// TclEventType: PROJECT_DASHBOARD_GADGET_NEW
+// TclEventType: PROJECT_DASHBOARD_GADGET_CHANGE
+// TclEventType: PROJECT_DASHBOARD_GADGET_NEW
+// TclEventType: PROJECT_DASHBOARD_GADGET_CHANGE
+// TclEventType: PROJECT_DASHBOARD_GADGET_NEW
+// TclEventType: PROJECT_DASHBOARD_GADGET_CHANGE
+// HMemoryUtils.trashcanNow. Engine heap size: 832 MB. GUI used memory: 43 MB. Current time: 3/25/19, 12:54:52 PM CET
+// TclEventType: FILE_SET_CHANGE
+// TclEventType: IP_LOCK_CHANGE
+// TclEventType: FILE_SET_CHANGE
+// TclEventType: PROJECT_NEW
+// [Engine Memory]: 908 MB (+88504kb) [02:00:10]
+// WARNING: HEventQueue.dispatchEvent() is taking  3833 ms.
+// Tcl Message: open_project /home/petr/Projects/fpga/redpitaya/wrk/Smart_JTAG_cable/rtl/vivado/smart_jtag_cable.xpr 
+// Tcl Message: Scanning sources... Finished scanning sources 
+// Tcl Message: INFO: [IP_Flow 19-234] Refreshing IP repositories INFO: [IP_Flow 19-1704] No user IP repositories specified INFO: [IP_Flow 19-2313] Loaded Vivado IP repository '/opt/Xilinx/Vivado/2018.3/data/ip'. 
+// Project name: smart_jtag_cable; location: /home/petr/Projects/fpga/redpitaya/wrk/Smart_JTAG_cable/rtl/vivado; part: xc7z010clg400-1
+// Tcl Message: open_project: Time (s): cpu = 00:00:14 ; elapsed = 00:00:17 . Memory (MB): peak = 6458.871 ; gain = 150.352 ; free physical = 2914 ; free virtual = 7722 
+// Elapsed time: 18 seconds
+dismissDialog("Open Project"); // bx (cp)
+// [Engine Memory]: 962 MB (+8707kb) [02:00:14]
+// TclEventType: DG_GRAPH_STALE
+// TclEventType: FILE_SET_CHANGE
+// TclEventType: IP_LOCK_CHANGE
+// TclEventType: DG_GRAPH_STALE
+// HMemoryUtils.trashcanNow. Engine heap size: 1,009 MB. GUI used memory: 49 MB. Current time: 3/25/19, 12:55:12 PM CET
+// Tcl Message: update_compile_order -fileset sources_1 
+// [GUI Memory]: 106 MB (+6649kb) [02:10:18]
+// HMemoryUtils.trashcanNow. Engine heap size: 1,003 MB. GUI used memory: 49 MB. Current time: 3/25/19, 1:25:12 PM CET
+// TclEventType: DG_GRAPH_STALE
+// TclEventType: FILE_SET_CHANGE
+// [Engine Memory]: 1,028 MB (+18427kb) [02:31:50]
+// HMemoryUtils.trashcanNow. Engine heap size: 1,028 MB. GUI used memory: 49 MB. Current time: 3/25/19, 1:26:42 PM CET
+// HMemoryUtils.trashcanNow. Engine heap size: 1,028 MB. GUI used memory: 48 MB. Current time: 3/25/19, 1:56:42 PM CET
+// HMemoryUtils.trashcanNow. Engine heap size: 1,028 MB. GUI used memory: 47 MB. Current time: 3/25/19, 2:26:42 PM CET
+// HMemoryUtils.trashcanNow. Engine heap size: 1,028 MB. GUI used memory: 47 MB. Current time: 3/25/19, 2:56:42 PM CET
+// HMemoryUtils.trashcanNow. Engine heap size: 1,028 MB. GUI used memory: 47 MB. Current time: 3/25/19, 3:26:42 PM CET
+// TclEventType: DG_GRAPH_STALE
+// TclEventType: FILE_SET_CHANGE

@@ -77,6 +77,7 @@ module jtag_engine # (
          end
          
          TCKL : begin
+	   // tck_en     = 1'b0;
             tck_en     = 1'b1;
             if (tck_pulse == 1'b1) begin
                next_state = TCKH;
