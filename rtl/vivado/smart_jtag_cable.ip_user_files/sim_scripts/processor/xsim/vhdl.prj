@@ -1,0 +1,6 @@
+vhdl xil_defaultlib  \
+"../../../bd/processor/ip/processor_jtag_cable_comm_0_0/sim/processor_jtag_cable_comm_0_0.vhd" \
+"../../../bd/processor/ip/processor_rst_clk_wiz_100M_0/sim/processor_rst_clk_wiz_100M_0.vhd" \
+"../../../bd/processor/sim/processor.vhd" \
+
+nosort
