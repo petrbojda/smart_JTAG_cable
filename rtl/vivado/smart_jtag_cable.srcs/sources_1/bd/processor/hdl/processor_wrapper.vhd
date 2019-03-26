@@ -1,7 +1,7 @@
 --Copyright 1986-2018 Xilinx, Inc. All Rights Reserved.
 ----------------------------------------------------------------------------------
 --Tool Version: Vivado v.2018.3 (lin64) Build 2405991 Thu Dec  6 23:36:41 MST 2018
---Date        : Sun Mar 24 21:32:34 2019
+--Date        : Tue Mar 26 00:57:02 2019
 --Host        : petr-dell running 64-bit Ubuntu 18.04.2 LTS
 --Command     : generate_target processor_wrapper.bd
 --Design      : processor_wrapper
@@ -34,7 +34,6 @@ entity processor_wrapper is
     FIXED_IO_ps_clk : inout STD_LOGIC;
     FIXED_IO_ps_porb : inout STD_LOGIC;
     FIXED_IO_ps_srstb : inout STD_LOGIC;
-    reset_rtl : in STD_LOGIC;
     reset_rtl_0 : in STD_LOGIC;
     tck : out STD_LOGIC;
     tdi : out STD_LOGIC;
@@ -46,6 +45,11 @@ end processor_wrapper;
 architecture STRUCTURE of processor_wrapper is
   component processor is
   port (
+    reset_rtl_0 : in STD_LOGIC;
+    tdo : in STD_LOGIC;
+    tdi : out STD_LOGIC;
+    tms : out STD_LOGIC;
+    tck : out STD_LOGIC;
     DDR_cas_n : inout STD_LOGIC;
     DDR_cke : inout STD_LOGIC;
     DDR_ck_n : inout STD_LOGIC;
@@ -66,13 +70,7 @@ architecture STRUCTURE of processor_wrapper is
     FIXED_IO_ddr_vrp : inout STD_LOGIC;
     FIXED_IO_ps_srstb : inout STD_LOGIC;
     FIXED_IO_ps_clk : inout STD_LOGIC;
-    FIXED_IO_ps_porb : inout STD_LOGIC;
-    reset_rtl : in STD_LOGIC;
-    reset_rtl_0 : in STD_LOGIC;
-    tdo : in STD_LOGIC;
-    tdi : out STD_LOGIC;
-    tms : out STD_LOGIC;
-    tck : out STD_LOGIC
+    FIXED_IO_ps_porb : inout STD_LOGIC
   );
   end component processor;
 begin
@@ -99,7 +97,6 @@ processor_i: component processor
       FIXED_IO_ps_clk => FIXED_IO_ps_clk,
       FIXED_IO_ps_porb => FIXED_IO_ps_porb,
       FIXED_IO_ps_srstb => FIXED_IO_ps_srstb,
-      reset_rtl => reset_rtl,
       reset_rtl_0 => reset_rtl_0,
       tck => tck,
       tdi => tdi,

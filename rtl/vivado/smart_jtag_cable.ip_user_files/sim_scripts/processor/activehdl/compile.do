@@ -2,10 +2,11 @@ vlib work
 vlib activehdl
 
 vlib activehdl/xilinx_vip
+vlib activehdl/xil_defaultlib
+vlib activehdl/xpm
 vlib activehdl/axi_infrastructure_v1_1_0
 vlib activehdl/axi_vip_v1_1_4
 vlib activehdl/processing_system7_vip_v1_0_6
-vlib activehdl/xil_defaultlib
 vlib activehdl/lib_cdc_v1_0_2
 vlib activehdl/proc_sys_reset_v5_0_13
 vlib activehdl/generic_baseblocks_v2_1_0
@@ -15,10 +16,11 @@ vlib activehdl/axi_register_slice_v2_1_18
 vlib activehdl/axi_protocol_converter_v2_1_18
 
 vmap xilinx_vip activehdl/xilinx_vip
+vmap xil_defaultlib activehdl/xil_defaultlib
+vmap xpm activehdl/xpm
 vmap axi_infrastructure_v1_1_0 activehdl/axi_infrastructure_v1_1_0
 vmap axi_vip_v1_1_4 activehdl/axi_vip_v1_1_4
 vmap processing_system7_vip_v1_0_6 activehdl/processing_system7_vip_v1_0_6
-vmap xil_defaultlib activehdl/xil_defaultlib
 vmap lib_cdc_v1_0_2 activehdl/lib_cdc_v1_0_2
 vmap proc_sys_reset_v5_0_13 activehdl/proc_sys_reset_v5_0_13
 vmap generic_baseblocks_v2_1_0 activehdl/generic_baseblocks_v2_1_0
@@ -37,6 +39,13 @@ vlog -work xilinx_vip  -sv2k12 "+incdir+/opt/Xilinx/Vivado/2018.3/data/xilinx_vi
 "/opt/Xilinx/Vivado/2018.3/data/xilinx_vip/hdl/axi_vip_if.sv" \
 "/opt/Xilinx/Vivado/2018.3/data/xilinx_vip/hdl/clk_vip_if.sv" \
 "/opt/Xilinx/Vivado/2018.3/data/xilinx_vip/hdl/rst_vip_if.sv" \
+
+vlog -work xil_defaultlib  -sv2k12 "+incdir+../../../../smart_jtag_cable.srcs/sources_1/bd/processor/ipshared/ec67/hdl" "+incdir+../../../../smart_jtag_cable.srcs/sources_1/bd/processor/ipshared/70cf/hdl" "+incdir+../../../../smart_jtag_cable.srcs/sources_1/bd/processor/ipshared/85a3" "+incdir+../../../../smart_jtag_cable.srcs/sources_1/bd/processor/ip/processor_processing_system7_0_0" "+incdir+/opt/Xilinx/Vivado/2018.3/data/xilinx_vip/include" \
+"/opt/Xilinx/Vivado/2018.3/data/ip/xpm/xpm_cdc/hdl/xpm_cdc.sv" \
+"/opt/Xilinx/Vivado/2018.3/data/ip/xpm/xpm_memory/hdl/xpm_memory.sv" \
+
+vcom -work xpm -93 \
+"/opt/Xilinx/Vivado/2018.3/data/ip/xpm/xpm_VCOMP.vhd" \
 
 vlog -work axi_infrastructure_v1_1_0  -v2k5 "+incdir+../../../../smart_jtag_cable.srcs/sources_1/bd/processor/ipshared/ec67/hdl" "+incdir+../../../../smart_jtag_cable.srcs/sources_1/bd/processor/ipshared/70cf/hdl" "+incdir+../../../../smart_jtag_cable.srcs/sources_1/bd/processor/ipshared/85a3" "+incdir+../../../../smart_jtag_cable.srcs/sources_1/bd/processor/ip/processor_processing_system7_0_0" "+incdir+/opt/Xilinx/Vivado/2018.3/data/xilinx_vip/include" \
 "../../../../smart_jtag_cable.srcs/sources_1/bd/processor/ipshared/ec67/hdl/axi_infrastructure_v1_1_vl_rfs.v" \

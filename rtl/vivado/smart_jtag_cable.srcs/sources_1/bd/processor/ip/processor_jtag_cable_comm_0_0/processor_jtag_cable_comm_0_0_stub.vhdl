@@ -1,7 +1,7 @@
 -- Copyright 1986-2018 Xilinx, Inc. All Rights Reserved.
 -- --------------------------------------------------------------------------------
 -- Tool Version: Vivado v.2018.3 (lin64) Build 2405991 Thu Dec  6 23:36:41 MST 2018
--- Date        : Sun Mar 24 21:33:39 2019
+-- Date        : Tue Mar 26 00:57:51 2019
 -- Host        : petr-dell running 64-bit Ubuntu 18.04.2 LTS
 -- Command     : write_vhdl -force -mode synth_stub
 --               /home/petr/Projects/fpga/redpitaya/wrk/Smart_JTAG_cable/rtl/vivado/smart_jtag_cable.srcs/sources_1/bd/processor/ip/processor_jtag_cable_comm_0_0/processor_jtag_cable_comm_0_0_stub.vhdl

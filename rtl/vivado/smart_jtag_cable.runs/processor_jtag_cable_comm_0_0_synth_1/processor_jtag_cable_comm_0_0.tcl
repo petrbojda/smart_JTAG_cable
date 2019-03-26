@@ -26,12 +26,16 @@ set_param synth.vivado.isSynthRun true
 set_msg_config -source 4 -id {IP_Flow 19-2162} -severity warning -new_severity info
 set_property webtalk.parent_dir /home/petr/Projects/fpga/redpitaya/wrk/Smart_JTAG_cable/rtl/vivado/smart_jtag_cable.cache/wt [current_project]
 set_property parent.project_path /home/petr/Projects/fpga/redpitaya/wrk/Smart_JTAG_cable/rtl/vivado/smart_jtag_cable.xpr [current_project]
+set_property XPM_LIBRARIES {XPM_CDC XPM_MEMORY} [current_project]
 set_property default_lib xil_defaultlib [current_project]
 set_property target_language VHDL [current_project]
 set_property board_part redpitaya.com:redpitaya:part0:1.1 [current_project]
 set_property ip_output_repo /home/petr/Projects/fpga/redpitaya/wrk/Smart_JTAG_cable/rtl/vivado/smart_jtag_cable.cache/ip [current_project]
 set_property ip_cache_permissions {read write} [current_project]
-read_vhdl -vhdl2008 -library xil_defaultlib /home/petr/Projects/fpga/redpitaya/wrk/Smart_JTAG_cable/rtl/src/hdl/axi_to_jtag_engine.vhd
+read_vhdl -vhdl2008 -library xil_defaultlib {
+  /home/petr/Projects/fpga/redpitaya/wrk/Smart_JTAG_cable/rtl/src/hdl/axi_to_jtag_engine.vhd
+  /home/petr/Projects/fpga/redpitaya/wrk/Smart_JTAG_cable/rtl/src/hdl/jtag_engine.vhd
+}
 read_vhdl -library xil_defaultlib /home/petr/Projects/fpga/redpitaya/wrk/Smart_JTAG_cable/rtl/src/hdl/jtag_cable_comm.vhd
 read_ip -quiet /home/petr/Projects/fpga/redpitaya/wrk/Smart_JTAG_cable/rtl/vivado/smart_jtag_cable.srcs/sources_1/bd/processor/ip/processor_jtag_cable_comm_0_0/processor_jtag_cable_comm_0_0.xci
 

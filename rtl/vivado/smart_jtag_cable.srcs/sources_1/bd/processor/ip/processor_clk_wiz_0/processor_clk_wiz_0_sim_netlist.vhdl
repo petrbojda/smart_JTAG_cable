@@ -1,10 +1,10 @@
 -- Copyright 1986-2018 Xilinx, Inc. All Rights Reserved.
 -- --------------------------------------------------------------------------------
 -- Tool Version: Vivado v.2018.3 (lin64) Build 2405991 Thu Dec  6 23:36:41 MST 2018
--- Date        : Sun Mar 24 20:31:29 2019
+-- Date        : Tue Mar 26 00:57:50 2019
 -- Host        : petr-dell running 64-bit Ubuntu 18.04.2 LTS
--- Command     : write_vhdl -force -mode funcsim -rename_top processor_clk_wiz_0 -prefix
---               processor_clk_wiz_0_ processor_clk_wiz_0_sim_netlist.vhdl
+-- Command     : write_vhdl -force -mode funcsim
+--               /home/petr/Projects/fpga/redpitaya/wrk/Smart_JTAG_cable/rtl/vivado/smart_jtag_cable.srcs/sources_1/bd/processor/ip/processor_clk_wiz_0/processor_clk_wiz_0_sim_netlist.vhdl
 -- Design      : processor_clk_wiz_0
 -- Purpose     : This VHDL netlist is a functional simulation representation of the design and should not be modified or
 --               synthesized. This netlist cannot be used for SDF annotated simulation.
@@ -17,10 +17,11 @@ use UNISIM.VCOMPONENTS.ALL;
 entity processor_clk_wiz_0_processor_clk_wiz_0_clk_wiz is
   port (
     clk_out1 : out STD_LOGIC;
-    reset : in STD_LOGIC;
     locked : out STD_LOGIC;
     clk_in1 : in STD_LOGIC
   );
+  attribute ORIG_REF_NAME : string;
+  attribute ORIG_REF_NAME of processor_clk_wiz_0_processor_clk_wiz_0_clk_wiz : entity is "processor_clk_wiz_0_clk_wiz";
 end processor_clk_wiz_0_processor_clk_wiz_0_clk_wiz;
 
 architecture STRUCTURE of processor_clk_wiz_0_processor_clk_wiz_0_clk_wiz is
@@ -158,7 +159,7 @@ mmcm_adv_inst: unisim.vcomponents.MMCME2_ADV
       PSEN => '0',
       PSINCDEC => '0',
       PWRDWN => '0',
-      RST => reset
+      RST => '0'
     );
 end STRUCTURE;
 library IEEE;
@@ -168,7 +169,6 @@ use UNISIM.VCOMPONENTS.ALL;
 entity processor_clk_wiz_0 is
   port (
     clk_out1 : out STD_LOGIC;
-    reset : in STD_LOGIC;
     locked : out STD_LOGIC;
     clk_in1 : in STD_LOGIC
   );
@@ -182,7 +182,6 @@ inst: entity work.processor_clk_wiz_0_processor_clk_wiz_0_clk_wiz
      port map (
       clk_in1 => clk_in1,
       clk_out1 => clk_out1,
-      locked => locked,
-      reset => reset
+      locked => locked
     );
 end STRUCTURE;

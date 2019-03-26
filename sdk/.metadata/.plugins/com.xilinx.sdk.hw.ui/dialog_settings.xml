@@ -1,0 +1,5 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<section name="Workbench">
+	<item value="rp_plarform_jtag_cable" key="applicationwizard.hw_platform_key"/>
+	<item value="rp_plarform_jtag_cable" key="bspwizard.hw_platform_key"/>
+</section>

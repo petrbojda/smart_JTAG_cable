@@ -2,8 +2,8 @@
 # Vivado v2018.3 (64-bit)
 # SW Build 2405991 on Thu Dec  6 23:36:41 MST 2018
 # IP Build 2404404 on Fri Dec  7 01:43:56 MST 2018
-# Start of session at: Sun Mar 24 21:32:56 2019
-# Process ID: 11164
+# Start of session at: Tue Mar 26 00:57:23 2019
+# Process ID: 31229
 # Current directory: /home/petr/Projects/fpga/redpitaya/wrk/Smart_JTAG_cable/rtl/vivado/smart_jtag_cable.runs/processor_jtag_cable_comm_0_0_synth_1
 # Command line: vivado -log processor_jtag_cable_comm_0_0.vds -product Vivado -mode batch -messageDb vivado.pb -notrace -source processor_jtag_cable_comm_0_0.tcl
 # Log file: /home/petr/Projects/fpga/redpitaya/wrk/Smart_JTAG_cable/rtl/vivado/smart_jtag_cable.runs/processor_jtag_cable_comm_0_0_synth_1/processor_jtag_cable_comm_0_0.vds
@@ -15,9 +15,9 @@ Starting synth_design
 Attempting to get a license for feature 'Synthesis' and/or device 'xc7z010'
 INFO: [Common 17-349] Got license for feature 'Synthesis' and/or device 'xc7z010'
 INFO: Launching helper process for spawning children vivado processes
-INFO: Helper process launched with PID 11343 
+INFO: Helper process launched with PID 31333 
 ---------------------------------------------------------------------------------
-Starting Synthesize : Time (s): cpu = 00:00:02 ; elapsed = 00:00:02 . Memory (MB): peak = 1458.262 ; gain = 89.910 ; free physical = 862 ; free virtual = 3827
+Starting RTL Elaboration : Time (s): cpu = 00:00:02 ; elapsed = 00:00:02 . Memory (MB): peak = 1461.344 ; gain = 87.910 ; free physical = 329 ; free virtual = 5794
 ---------------------------------------------------------------------------------
 INFO: [Synth 8-638] synthesizing module 'processor_jtag_cable_comm_0_0' [/home/petr/Projects/fpga/redpitaya/wrk/Smart_JTAG_cable/rtl/vivado/smart_jtag_cable.srcs/sources_1/bd/processor/ip/processor_jtag_cable_comm_0_0/synth/processor_jtag_cable_comm_0_0.vhd:86]
 	Parameter C_S_AXI_DATA_WIDTH bound to: 32 - type: integer 
@@ -31,39 +31,179 @@ INFO: [Synth 8-638] synthesizing module 'axi_to_jtag_engine' [/home/petr/Project
 	Parameter C_S_AXI_ADDR_WIDTH bound to: 5 - type: integer 
 WARNING: [Synth 8-6014] Unused sequential element loc_addr_reg was removed.  [/home/petr/Projects/fpga/redpitaya/wrk/Smart_JTAG_cable/rtl/src/hdl/axi_to_jtag_engine.vhd:192]
 INFO: [Synth 8-256] done synthesizing module 'axi_to_jtag_engine' (1#1) [/home/petr/Projects/fpga/redpitaya/wrk/Smart_JTAG_cable/rtl/src/hdl/axi_to_jtag_engine.vhd:45]
-WARNING: [Synth 8-3848] Net jtag_tck in module/entity jtag_cable_comm does not have driver. [/home/petr/Projects/fpga/redpitaya/wrk/Smart_JTAG_cable/rtl/src/hdl/jtag_cable_comm.vhd:35]
-WARNING: [Synth 8-3848] Net jtag_tms in module/entity jtag_cable_comm does not have driver. [/home/petr/Projects/fpga/redpitaya/wrk/Smart_JTAG_cable/rtl/src/hdl/jtag_cable_comm.vhd:37]
-WARNING: [Synth 8-3848] Net jtag_tdi in module/entity jtag_cable_comm does not have driver. [/home/petr/Projects/fpga/redpitaya/wrk/Smart_JTAG_cable/rtl/src/hdl/jtag_cable_comm.vhd:38]
-WARNING: [Synth 8-3848] Net jtag_tdo_vector in module/entity jtag_cable_comm does not have driver. [/home/petr/Projects/fpga/redpitaya/wrk/Smart_JTAG_cable/rtl/src/hdl/jtag_cable_comm.vhd:50]
-WARNING: [Synth 8-3848] Net jtag_done in module/entity jtag_cable_comm does not have driver. [/home/petr/Projects/fpga/redpitaya/wrk/Smart_JTAG_cable/rtl/src/hdl/jtag_cable_comm.vhd:52]
-INFO: [Synth 8-256] done synthesizing module 'jtag_cable_comm' (2#1) [/home/petr/Projects/fpga/redpitaya/wrk/Smart_JTAG_cable/rtl/src/hdl/jtag_cable_comm.vhd:42]
-INFO: [Synth 8-256] done synthesizing module 'processor_jtag_cable_comm_0_0' (3#1) [/home/petr/Projects/fpga/redpitaya/wrk/Smart_JTAG_cable/rtl/vivado/smart_jtag_cable.srcs/sources_1/bd/processor/ip/processor_jtag_cable_comm_0_0/synth/processor_jtag_cable_comm_0_0.vhd:86]
+INFO: [Synth 8-638] synthesizing module 'jtag_engine' [/home/petr/Projects/fpga/redpitaya/wrk/Smart_JTAG_cable/rtl/src/hdl/jtag_engine.vhd:56]
+	Parameter C_TCK_CLOCK_RATIO bound to: 8 - type: integer 
+WARNING: [Synth 8-6014] Unused sequential element index_reg was removed.  [/home/petr/Projects/fpga/redpitaya/wrk/Smart_JTAG_cable/rtl/src/hdl/jtag_engine.vhd:150]
+WARNING: [Synth 8-6014] Unused sequential element tdo_capture_reg was removed.  [/home/petr/Projects/fpga/redpitaya/wrk/Smart_JTAG_cable/rtl/src/hdl/jtag_engine.vhd:184]
+WARNING: [Synth 8-6014] Unused sequential element tdo_buffer_reg was removed.  [/home/petr/Projects/fpga/redpitaya/wrk/Smart_JTAG_cable/rtl/src/hdl/jtag_engine.vhd:200]
+WARNING: [Synth 8-3848] Net tdo_capture2 in module/entity jtag_engine does not have driver. [/home/petr/Projects/fpga/redpitaya/wrk/Smart_JTAG_cable/rtl/src/hdl/jtag_engine.vhd:72]
+INFO: [Synth 8-256] done synthesizing module 'jtag_engine' (2#1) [/home/petr/Projects/fpga/redpitaya/wrk/Smart_JTAG_cable/rtl/src/hdl/jtag_engine.vhd:56]
+INFO: [Synth 8-256] done synthesizing module 'jtag_cable_comm' (3#1) [/home/petr/Projects/fpga/redpitaya/wrk/Smart_JTAG_cable/rtl/src/hdl/jtag_cable_comm.vhd:42]
+INFO: [Synth 8-256] done synthesizing module 'processor_jtag_cable_comm_0_0' (4#1) [/home/petr/Projects/fpga/redpitaya/wrk/Smart_JTAG_cable/rtl/vivado/smart_jtag_cable.srcs/sources_1/bd/processor/ip/processor_jtag_cable_comm_0_0/synth/processor_jtag_cable_comm_0_0.vhd:86]
+WARNING: [Synth 8-3331] design jtag_engine has unconnected port tdo_vector[31]
+WARNING: [Synth 8-3331] design jtag_engine has unconnected port tdo_vector[30]
+WARNING: [Synth 8-3331] design jtag_engine has unconnected port tdo_vector[29]
+WARNING: [Synth 8-3331] design jtag_engine has unconnected port tdo_vector[28]
+WARNING: [Synth 8-3331] design jtag_engine has unconnected port tdo_vector[27]
+WARNING: [Synth 8-3331] design jtag_engine has unconnected port tdo_vector[26]
+WARNING: [Synth 8-3331] design jtag_engine has unconnected port tdo_vector[25]
+WARNING: [Synth 8-3331] design jtag_engine has unconnected port tdo_vector[24]
+WARNING: [Synth 8-3331] design jtag_engine has unconnected port tdo_vector[23]
+WARNING: [Synth 8-3331] design jtag_engine has unconnected port tdo_vector[22]
+WARNING: [Synth 8-3331] design jtag_engine has unconnected port tdo_vector[21]
+WARNING: [Synth 8-3331] design jtag_engine has unconnected port tdo_vector[20]
+WARNING: [Synth 8-3331] design jtag_engine has unconnected port tdo_vector[19]
+WARNING: [Synth 8-3331] design jtag_engine has unconnected port tdo_vector[18]
+WARNING: [Synth 8-3331] design jtag_engine has unconnected port tdo_vector[17]
+WARNING: [Synth 8-3331] design jtag_engine has unconnected port tdo_vector[16]
+WARNING: [Synth 8-3331] design jtag_engine has unconnected port tdo_vector[15]
+WARNING: [Synth 8-3331] design jtag_engine has unconnected port tdo_vector[14]
+WARNING: [Synth 8-3331] design jtag_engine has unconnected port tdo_vector[13]
+WARNING: [Synth 8-3331] design jtag_engine has unconnected port tdo_vector[12]
+WARNING: [Synth 8-3331] design jtag_engine has unconnected port tdo_vector[11]
+WARNING: [Synth 8-3331] design jtag_engine has unconnected port tdo_vector[10]
+WARNING: [Synth 8-3331] design jtag_engine has unconnected port tdo_vector[9]
+WARNING: [Synth 8-3331] design jtag_engine has unconnected port tdo_vector[8]
+WARNING: [Synth 8-3331] design jtag_engine has unconnected port tdo_vector[7]
+WARNING: [Synth 8-3331] design jtag_engine has unconnected port tdo_vector[6]
+WARNING: [Synth 8-3331] design jtag_engine has unconnected port tdo_vector[5]
+WARNING: [Synth 8-3331] design jtag_engine has unconnected port tdo_vector[4]
+WARNING: [Synth 8-3331] design jtag_engine has unconnected port tdo_vector[3]
+WARNING: [Synth 8-3331] design jtag_engine has unconnected port tdo_vector[2]
+WARNING: [Synth 8-3331] design jtag_engine has unconnected port tdo_vector[1]
+WARNING: [Synth 8-3331] design jtag_engine has unconnected port tdo_vector[0]
+WARNING: [Synth 8-3331] design jtag_engine has unconnected port tms_vector[31]
+WARNING: [Synth 8-3331] design jtag_engine has unconnected port tms_vector[30]
+WARNING: [Synth 8-3331] design jtag_engine has unconnected port tms_vector[29]
+WARNING: [Synth 8-3331] design jtag_engine has unconnected port tms_vector[28]
+WARNING: [Synth 8-3331] design jtag_engine has unconnected port tms_vector[27]
+WARNING: [Synth 8-3331] design jtag_engine has unconnected port tms_vector[26]
+WARNING: [Synth 8-3331] design jtag_engine has unconnected port tms_vector[25]
+WARNING: [Synth 8-3331] design jtag_engine has unconnected port tms_vector[24]
+WARNING: [Synth 8-3331] design jtag_engine has unconnected port tms_vector[23]
+WARNING: [Synth 8-3331] design jtag_engine has unconnected port tms_vector[22]
+WARNING: [Synth 8-3331] design jtag_engine has unconnected port tms_vector[21]
+WARNING: [Synth 8-3331] design jtag_engine has unconnected port tms_vector[20]
+WARNING: [Synth 8-3331] design jtag_engine has unconnected port tms_vector[19]
+WARNING: [Synth 8-3331] design jtag_engine has unconnected port tms_vector[18]
+WARNING: [Synth 8-3331] design jtag_engine has unconnected port tms_vector[17]
+WARNING: [Synth 8-3331] design jtag_engine has unconnected port tms_vector[16]
+WARNING: [Synth 8-3331] design jtag_engine has unconnected port tms_vector[15]
+WARNING: [Synth 8-3331] design jtag_engine has unconnected port tms_vector[14]
+WARNING: [Synth 8-3331] design jtag_engine has unconnected port tms_vector[13]
+WARNING: [Synth 8-3331] design jtag_engine has unconnected port tms_vector[12]
+WARNING: [Synth 8-3331] design jtag_engine has unconnected port tms_vector[11]
+WARNING: [Synth 8-3331] design jtag_engine has unconnected port tms_vector[10]
+WARNING: [Synth 8-3331] design jtag_engine has unconnected port tms_vector[9]
+WARNING: [Synth 8-3331] design jtag_engine has unconnected port tms_vector[8]
+WARNING: [Synth 8-3331] design jtag_engine has unconnected port tms_vector[7]
+WARNING: [Synth 8-3331] design jtag_engine has unconnected port tms_vector[6]
+WARNING: [Synth 8-3331] design jtag_engine has unconnected port tms_vector[5]
+WARNING: [Synth 8-3331] design jtag_engine has unconnected port tms_vector[4]
+WARNING: [Synth 8-3331] design jtag_engine has unconnected port tms_vector[3]
+WARNING: [Synth 8-3331] design jtag_engine has unconnected port tms_vector[2]
+WARNING: [Synth 8-3331] design jtag_engine has unconnected port tms_vector[1]
+WARNING: [Synth 8-3331] design jtag_engine has unconnected port tms_vector[0]
+WARNING: [Synth 8-3331] design jtag_engine has unconnected port tdi_vector[31]
+WARNING: [Synth 8-3331] design jtag_engine has unconnected port tdi_vector[30]
+WARNING: [Synth 8-3331] design jtag_engine has unconnected port tdi_vector[29]
+WARNING: [Synth 8-3331] design jtag_engine has unconnected port tdi_vector[28]
+WARNING: [Synth 8-3331] design jtag_engine has unconnected port tdi_vector[27]
+WARNING: [Synth 8-3331] design jtag_engine has unconnected port tdi_vector[26]
+WARNING: [Synth 8-3331] design jtag_engine has unconnected port tdi_vector[25]
+WARNING: [Synth 8-3331] design jtag_engine has unconnected port tdi_vector[24]
+WARNING: [Synth 8-3331] design jtag_engine has unconnected port tdi_vector[23]
+WARNING: [Synth 8-3331] design jtag_engine has unconnected port tdi_vector[22]
+WARNING: [Synth 8-3331] design jtag_engine has unconnected port tdi_vector[21]
+WARNING: [Synth 8-3331] design jtag_engine has unconnected port tdi_vector[20]
+WARNING: [Synth 8-3331] design jtag_engine has unconnected port tdi_vector[19]
+WARNING: [Synth 8-3331] design jtag_engine has unconnected port tdi_vector[18]
+WARNING: [Synth 8-3331] design jtag_engine has unconnected port tdi_vector[17]
+WARNING: [Synth 8-3331] design jtag_engine has unconnected port tdi_vector[16]
+WARNING: [Synth 8-3331] design jtag_engine has unconnected port tdi_vector[15]
+WARNING: [Synth 8-3331] design jtag_engine has unconnected port tdi_vector[14]
+WARNING: [Synth 8-3331] design jtag_engine has unconnected port tdi_vector[13]
+WARNING: [Synth 8-3331] design jtag_engine has unconnected port tdi_vector[12]
+WARNING: [Synth 8-3331] design jtag_engine has unconnected port tdi_vector[11]
+WARNING: [Synth 8-3331] design jtag_engine has unconnected port tdi_vector[10]
+WARNING: [Synth 8-3331] design jtag_engine has unconnected port tdi_vector[9]
+WARNING: [Synth 8-3331] design jtag_engine has unconnected port tdi_vector[8]
+WARNING: [Synth 8-3331] design jtag_engine has unconnected port tdi_vector[7]
+WARNING: [Synth 8-3331] design jtag_engine has unconnected port tdi_vector[6]
+WARNING: [Synth 8-3331] design jtag_engine has unconnected port tdi_vector[5]
+WARNING: [Synth 8-3331] design jtag_engine has unconnected port tdi_vector[4]
+WARNING: [Synth 8-3331] design jtag_engine has unconnected port tdi_vector[3]
+WARNING: [Synth 8-3331] design jtag_engine has unconnected port tdi_vector[2]
+WARNING: [Synth 8-3331] design jtag_engine has unconnected port tdi_vector[1]
+WARNING: [Synth 8-3331] design jtag_engine has unconnected port tdi_vector[0]
+WARNING: [Synth 8-3331] design jtag_engine has unconnected port jtag_tdo
 WARNING: [Synth 8-3331] design axi_to_jtag_engine has unconnected port S_AXI_AWPROT[2]
 WARNING: [Synth 8-3331] design axi_to_jtag_engine has unconnected port S_AXI_AWPROT[1]
 WARNING: [Synth 8-3331] design axi_to_jtag_engine has unconnected port S_AXI_AWPROT[0]
-WARNING: [Synth 8-3331] design axi_to_jtag_engine has unconnected port S_AXI_ARPROT[2]
-WARNING: [Synth 8-3331] design axi_to_jtag_engine has unconnected port S_AXI_ARPROT[1]
-WARNING: [Synth 8-3331] design axi_to_jtag_engine has unconnected port S_AXI_ARPROT[0]
-WARNING: [Synth 8-3331] design jtag_cable_comm has unconnected port jtag_tck
-WARNING: [Synth 8-3331] design jtag_cable_comm has unconnected port jtag_tms
-WARNING: [Synth 8-3331] design jtag_cable_comm has unconnected port jtag_tdi
-WARNING: [Synth 8-3331] design jtag_cable_comm has unconnected port jtag_tdo
+INFO: [Common 17-14] Message 'Synth 8-3331' appears 100 times and further instances of the messages will be disabled. Use the Tcl command set_msg_config to change the current settings.
 ---------------------------------------------------------------------------------
-Finished Synthesize : Time (s): cpu = 00:00:02 ; elapsed = 00:00:04 . Memory (MB): peak = 1504.012 ; gain = 135.660 ; free physical = 830 ; free virtual = 3799
+Finished RTL Elaboration : Time (s): cpu = 00:00:02 ; elapsed = 00:00:03 . Memory (MB): peak = 1508.094 ; gain = 134.660 ; free physical = 345 ; free virtual = 5811
+---------------------------------------------------------------------------------
+
+Report Check Netlist: 
++------+------------------+-------+---------+-------+------------------+
+|      |Item              |Errors |Warnings |Status |Description       |
++------+------------------+-------+---------+-------+------------------+
+|1     |multi_driven_nets |      0|        0|Passed |Multi driven nets |
++------+------------------+-------+---------+-------+------------------+
+---------------------------------------------------------------------------------
+Start Handling Custom Attributes
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
-Finished Constraint Validation : Time (s): cpu = 00:00:02 ; elapsed = 00:00:04 . Memory (MB): peak = 1504.012 ; gain = 135.660 ; free physical = 879 ; free virtual = 3849
+Finished Handling Custom Attributes : Time (s): cpu = 00:00:03 ; elapsed = 00:00:03 . Memory (MB): peak = 1508.094 ; gain = 134.660 ; free physical = 344 ; free virtual = 5809
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Finished RTL Optimization Phase 1 : Time (s): cpu = 00:00:03 ; elapsed = 00:00:03 . Memory (MB): peak = 1508.094 ; gain = 134.660 ; free physical = 344 ; free virtual = 5809
+---------------------------------------------------------------------------------
+INFO: [Device 21-403] Loading part xc7z010clg400-1
+INFO: [Project 1-570] Preparing netlist for logic optimization
+
+Processing XDC Constraints
+Initializing timing engine
+Completed Processing XDC Constraints
+
+Netlist sorting complete. Time (s): cpu = 00:00:00 ; elapsed = 00:00:00 . Memory (MB): peak = 1811.730 ; gain = 0.000 ; free physical = 182 ; free virtual = 5455
+INFO: [Project 1-111] Unisim Transformation Summary:
+No Unisim elements were transformed.
+
+Netlist sorting complete. Time (s): cpu = 00:00:00 ; elapsed = 00:00:00 . Memory (MB): peak = 1811.730 ; gain = 0.000 ; free physical = 181 ; free virtual = 5454
+WARNING: [Constraints 18-5210] No constraints selected for write.
+Resolution: This message can indicate that there are no constraints for the design, or it can indicate that the used_in flags are set such that the constraints are ignored. This later case is used when running synth_design to not write synthesis constraints to the resulting checkpoint. Instead, project constraints are read when the synthesized design is opened.
+Constraint Validation Runtime : Time (s): cpu = 00:00:00.08 ; elapsed = 00:00:00.10 . Memory (MB): peak = 1813.730 ; gain = 2.000 ; free physical = 172 ; free virtual = 5445
+---------------------------------------------------------------------------------
+Finished Constraint Validation : Time (s): cpu = 00:00:08 ; elapsed = 00:00:09 . Memory (MB): peak = 1813.730 ; gain = 440.297 ; free physical = 247 ; free virtual = 5521
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
 Start Loading Part and Timing Information
 ---------------------------------------------------------------------------------
 Loading part: xc7z010clg400-1
 ---------------------------------------------------------------------------------
-INFO: [Device 21-403] Loading part xc7z010clg400-1
-Finished Loading Part and Timing Information : Time (s): cpu = 00:00:02 ; elapsed = 00:00:04 . Memory (MB): peak = 1504.012 ; gain = 135.660 ; free physical = 869 ; free virtual = 3838
+Finished Loading Part and Timing Information : Time (s): cpu = 00:00:08 ; elapsed = 00:00:09 . Memory (MB): peak = 1813.730 ; gain = 440.297 ; free physical = 247 ; free virtual = 5521
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
-Finished RTL Optimization Phase 2 : Time (s): cpu = 00:00:03 ; elapsed = 00:00:04 . Memory (MB): peak = 1520.027 ; gain = 151.676 ; free physical = 858 ; free virtual = 3828
+Start Applying 'set_property' XDC Constraints
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Finished applying 'set_property' XDC Constraints : Time (s): cpu = 00:00:08 ; elapsed = 00:00:09 . Memory (MB): peak = 1813.730 ; gain = 440.297 ; free physical = 249 ; free virtual = 5523
+---------------------------------------------------------------------------------
+INFO: [Synth 8-802] inferred FSM for state register 'main_fsm_reg' in module 'jtag_engine'
+INFO: [Synth 8-5544] ROM "tms_output" won't be mapped to Block RAM because address size (2) smaller than threshold (5)
+INFO: [Synth 8-5544] ROM "main_fsm" won't be mapped to Block RAM because address size (1) smaller than threshold (5)
+---------------------------------------------------------------------------------------------------
+                   State |                     New Encoding |                Previous Encoding 
+---------------------------------------------------------------------------------------------------
+                    idle |                               00 |                               00
+                    tckl |                               01 |                               01
+                    tckh |                               10 |                               10
+---------------------------------------------------------------------------------------------------
+INFO: [Synth 8-3354] encoded FSM with state register 'main_fsm_reg' using encoding 'sequential' in module 'jtag_engine'
+---------------------------------------------------------------------------------
+Finished RTL Optimization Phase 2 : Time (s): cpu = 00:00:08 ; elapsed = 00:00:10 . Memory (MB): peak = 1813.730 ; gain = 440.297 ; free physical = 239 ; free virtual = 5514
 ---------------------------------------------------------------------------------
 
 Report RTL Partitions: 
@@ -71,20 +211,27 @@ Report RTL Partitions:
 | |RTL Partition |Replication |Instances |
 +-+--------------+------------+----------+
 +-+--------------+------------+----------+
-No constraint files found.
 ---------------------------------------------------------------------------------
 Start RTL Component Statistics 
 ---------------------------------------------------------------------------------
 Detailed RTL Component Info : 
++---Adders : 
+	   2 Input     32 Bit       Adders := 1     
+	   2 Input      8 Bit       Adders := 1     
 +---Registers : 
-	               32 Bit    Registers := 6     
+	               32 Bit    Registers := 8     
+	                8 Bit    Registers := 1     
 	                5 Bit    Registers := 2     
 	                2 Bit    Registers := 2     
-	                1 Bit    Registers := 6     
+	                1 Bit    Registers := 11    
 +---Muxes : 
-	   2 Input     32 Bit        Muxes := 6     
+	   2 Input     32 Bit        Muxes := 8     
 	   6 Input     32 Bit        Muxes := 5     
-	   2 Input      1 Bit        Muxes := 6     
+	   2 Input      8 Bit        Muxes := 2     
+	   3 Input      2 Bit        Muxes := 1     
+	   2 Input      2 Bit        Muxes := 4     
+	   2 Input      1 Bit        Muxes := 11    
+	   3 Input      1 Bit        Muxes := 1     
 ---------------------------------------------------------------------------------
 Finished RTL Component Statistics 
 ---------------------------------------------------------------------------------
@@ -103,6 +250,22 @@ Detailed RTL Component Info :
 	   2 Input     32 Bit        Muxes := 6     
 	   6 Input     32 Bit        Muxes := 5     
 	   2 Input      1 Bit        Muxes := 6     
+Module jtag_engine 
+Detailed RTL Component Info : 
++---Adders : 
+	   2 Input     32 Bit       Adders := 1     
+	   2 Input      8 Bit       Adders := 1     
++---Registers : 
+	               32 Bit    Registers := 2     
+	                8 Bit    Registers := 1     
+	                1 Bit    Registers := 5     
++---Muxes : 
+	   2 Input     32 Bit        Muxes := 2     
+	   2 Input      8 Bit        Muxes := 2     
+	   3 Input      2 Bit        Muxes := 1     
+	   2 Input      2 Bit        Muxes := 4     
+	   2 Input      1 Bit        Muxes := 5     
+	   3 Input      1 Bit        Muxes := 1     
 ---------------------------------------------------------------------------------
 Finished RTL Hierarchical Component Statistics
 ---------------------------------------------------------------------------------
@@ -115,27 +278,16 @@ BRAMs: 120 (col length: RAMB18 40 RAMB36 20)
 ---------------------------------------------------------------------------------
 Finished Part Resource Summary
 ---------------------------------------------------------------------------------
-No constraint files found.
 ---------------------------------------------------------------------------------
 Start Cross Boundary and Area Optimization
 ---------------------------------------------------------------------------------
 Warning: Parallel synthesis criteria is not met 
-WARNING: [Synth 8-3331] design processor_jtag_cable_comm_0_0 has unconnected port jtag_tck
-WARNING: [Synth 8-3331] design processor_jtag_cable_comm_0_0 has unconnected port jtag_tms
-WARNING: [Synth 8-3331] design processor_jtag_cable_comm_0_0 has unconnected port jtag_tdi
-WARNING: [Synth 8-3331] design processor_jtag_cable_comm_0_0 has unconnected port s_axi_awprot[2]
-WARNING: [Synth 8-3331] design processor_jtag_cable_comm_0_0 has unconnected port s_axi_awprot[1]
-WARNING: [Synth 8-3331] design processor_jtag_cable_comm_0_0 has unconnected port s_axi_awprot[0]
-WARNING: [Synth 8-3331] design processor_jtag_cable_comm_0_0 has unconnected port s_axi_arprot[2]
-WARNING: [Synth 8-3331] design processor_jtag_cable_comm_0_0 has unconnected port s_axi_arprot[1]
-WARNING: [Synth 8-3331] design processor_jtag_cable_comm_0_0 has unconnected port s_axi_arprot[0]
-WARNING: [Synth 8-3331] design processor_jtag_cable_comm_0_0 has unconnected port jtag_tdo
 INFO: [Synth 8-3886] merging instance 'U0/axi_to_jtag_engine_1/axi_rresp_reg[0]' (FDRE) to 'U0/axi_to_jtag_engine_1/axi_rresp_reg[1]'
 INFO: [Synth 8-3333] propagating constant 0 across sequential element (\U0/axi_to_jtag_engine_1/axi_rresp_reg[1] )
 INFO: [Synth 8-3886] merging instance 'U0/axi_to_jtag_engine_1/axi_bresp_reg[0]' (FDRE) to 'U0/axi_to_jtag_engine_1/axi_bresp_reg[1]'
 INFO: [Synth 8-3333] propagating constant 0 across sequential element (\U0/axi_to_jtag_engine_1/axi_bresp_reg[1] )
 ---------------------------------------------------------------------------------
-Finished Cross Boundary and Area Optimization : Time (s): cpu = 00:00:05 ; elapsed = 00:00:08 . Memory (MB): peak = 1635.395 ; gain = 267.043 ; free physical = 525 ; free virtual = 3521
+Finished Cross Boundary and Area Optimization : Time (s): cpu = 00:00:09 ; elapsed = 00:00:11 . Memory (MB): peak = 1813.730 ; gain = 440.297 ; free physical = 179 ; free virtual = 5451
 ---------------------------------------------------------------------------------
 
 Report RTL Partitions: 
@@ -143,12 +295,17 @@ Report RTL Partitions:
 | |RTL Partition |Replication |Instances |
 +-+--------------+------------+----------+
 +-+--------------+------------+----------+
-No constraint files found.
+---------------------------------------------------------------------------------
+Start Applying XDC Timing Constraints
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Finished Applying XDC Timing Constraints : Time (s): cpu = 00:00:14 ; elapsed = 00:00:16 . Memory (MB): peak = 1813.730 ; gain = 440.297 ; free physical = 172 ; free virtual = 5280
+---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
 Start Timing Optimization
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
-Finished Timing Optimization : Time (s): cpu = 00:00:05 ; elapsed = 00:00:08 . Memory (MB): peak = 1635.395 ; gain = 267.043 ; free physical = 520 ; free virtual = 3516
+Finished Timing Optimization : Time (s): cpu = 00:00:15 ; elapsed = 00:00:16 . Memory (MB): peak = 1813.730 ; gain = 440.297 ; free physical = 170 ; free virtual = 5278
 ---------------------------------------------------------------------------------
 
 Report RTL Partitions: 
@@ -160,7 +317,7 @@ Report RTL Partitions:
 Start Technology Mapping
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
-Finished Technology Mapping : Time (s): cpu = 00:00:05 ; elapsed = 00:00:08 . Memory (MB): peak = 1635.395 ; gain = 267.043 ; free physical = 521 ; free virtual = 3517
+Finished Technology Mapping : Time (s): cpu = 00:00:15 ; elapsed = 00:00:16 . Memory (MB): peak = 1821.738 ; gain = 448.305 ; free physical = 165 ; free virtual = 5273
 ---------------------------------------------------------------------------------
 
 Report RTL Partitions: 
@@ -184,7 +341,7 @@ Start Final Netlist Cleanup
 Finished Final Netlist Cleanup
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
-Finished IO Insertion : Time (s): cpu = 00:00:06 ; elapsed = 00:00:09 . Memory (MB): peak = 1635.395 ; gain = 267.043 ; free physical = 451 ; free virtual = 3447
+Finished IO Insertion : Time (s): cpu = 00:00:15 ; elapsed = 00:00:17 . Memory (MB): peak = 1821.738 ; gain = 448.305 ; free physical = 187 ; free virtual = 5295
 ---------------------------------------------------------------------------------
 
 Report Check Netlist: 
@@ -197,7 +354,7 @@ Report Check Netlist:
 Start Renaming Generated Instances
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
-Finished Renaming Generated Instances : Time (s): cpu = 00:00:06 ; elapsed = 00:00:09 . Memory (MB): peak = 1635.395 ; gain = 267.043 ; free physical = 451 ; free virtual = 3447
+Finished Renaming Generated Instances : Time (s): cpu = 00:00:15 ; elapsed = 00:00:17 . Memory (MB): peak = 1821.738 ; gain = 448.305 ; free physical = 187 ; free virtual = 5295
 ---------------------------------------------------------------------------------
 
 Report RTL Partitions: 
@@ -209,25 +366,25 @@ Report RTL Partitions:
 Start Rebuilding User Hierarchy
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
-Finished Rebuilding User Hierarchy : Time (s): cpu = 00:00:06 ; elapsed = 00:00:09 . Memory (MB): peak = 1635.395 ; gain = 267.043 ; free physical = 451 ; free virtual = 3447
+Finished Rebuilding User Hierarchy : Time (s): cpu = 00:00:15 ; elapsed = 00:00:17 . Memory (MB): peak = 1821.738 ; gain = 448.305 ; free physical = 187 ; free virtual = 5295
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
 Start Renaming Generated Ports
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
-Finished Renaming Generated Ports : Time (s): cpu = 00:00:06 ; elapsed = 00:00:09 . Memory (MB): peak = 1635.395 ; gain = 267.043 ; free physical = 451 ; free virtual = 3447
+Finished Renaming Generated Ports : Time (s): cpu = 00:00:15 ; elapsed = 00:00:17 . Memory (MB): peak = 1821.738 ; gain = 448.305 ; free physical = 187 ; free virtual = 5295
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
 Start Handling Custom Attributes
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
-Finished Handling Custom Attributes : Time (s): cpu = 00:00:06 ; elapsed = 00:00:09 . Memory (MB): peak = 1635.395 ; gain = 267.043 ; free physical = 451 ; free virtual = 3447
+Finished Handling Custom Attributes : Time (s): cpu = 00:00:15 ; elapsed = 00:00:17 . Memory (MB): peak = 1821.738 ; gain = 448.305 ; free physical = 187 ; free virtual = 5295
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
 Start Renaming Generated Nets
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
-Finished Renaming Generated Nets : Time (s): cpu = 00:00:06 ; elapsed = 00:00:09 . Memory (MB): peak = 1635.395 ; gain = 267.043 ; free physical = 451 ; free virtual = 3447
+Finished Renaming Generated Nets : Time (s): cpu = 00:00:15 ; elapsed = 00:00:17 . Memory (MB): peak = 1821.738 ; gain = 448.305 ; free physical = 186 ; free virtual = 5295
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
 Start Writing Synthesis Report
@@ -240,54 +397,57 @@ Report BlackBoxes:
 +-+--------------+----------+
 
 Report Cell Usage: 
-+------+-----+------+
-|      |Cell |Count |
-+------+-----+------+
-|1     |LUT1 |     1|
-|2     |LUT2 |     1|
-|3     |LUT3 |     1|
-|4     |LUT4 |     7|
-|5     |LUT5 |    84|
-|6     |LUT6 |    37|
-|7     |FDRE |   200|
-|8     |FDSE |     4|
-+------+-----+------+
++------+-------+------+
+|      |Cell   |Count |
++------+-------+------+
+|1     |CARRY4 |    16|
+|2     |LUT1   |    32|
+|3     |LUT2   |    37|
+|4     |LUT3   |    97|
+|5     |LUT4   |    22|
+|6     |LUT5   |    88|
+|7     |LUT6   |    47|
+|8     |FDCE   |   110|
+|9     |FDRE   |   201|
+|10    |FDSE   |     4|
++------+-------+------+
 
 Report Instance Areas: 
 +------+-------------------------+-------------------+------+
 |      |Instance                 |Module             |Cells |
 +------+-------------------------+-------------------+------+
-|1     |top                      |                   |   335|
-|2     |  U0                     |jtag_cable_comm    |   335|
-|3     |    axi_to_jtag_engine_1 |axi_to_jtag_engine |   335|
+|1     |top                      |                   |   654|
+|2     |  U0                     |jtag_cable_comm    |   654|
+|3     |    axi_to_jtag_engine_1 |axi_to_jtag_engine |   472|
+|4     |    jtag_engine_i        |jtag_engine        |   182|
 +------+-------------------------+-------------------+------+
 ---------------------------------------------------------------------------------
-Finished Writing Synthesis Report : Time (s): cpu = 00:00:06 ; elapsed = 00:00:09 . Memory (MB): peak = 1635.395 ; gain = 267.043 ; free physical = 451 ; free virtual = 3447
+Finished Writing Synthesis Report : Time (s): cpu = 00:00:15 ; elapsed = 00:00:17 . Memory (MB): peak = 1821.738 ; gain = 448.305 ; free physical = 185 ; free virtual = 5294
 ---------------------------------------------------------------------------------
-Synthesis finished with 0 errors, 0 critical warnings and 26 warnings.
-Synthesis Optimization Runtime : Time (s): cpu = 00:00:06 ; elapsed = 00:00:09 . Memory (MB): peak = 1635.395 ; gain = 267.043 ; free physical = 452 ; free virtual = 3448
-Synthesis Optimization Complete : Time (s): cpu = 00:00:06 ; elapsed = 00:00:09 . Memory (MB): peak = 1635.402 ; gain = 267.043 ; free physical = 452 ; free virtual = 3448
+Synthesis finished with 0 errors, 0 critical warnings and 7 warnings.
+Synthesis Optimization Runtime : Time (s): cpu = 00:00:12 ; elapsed = 00:00:13 . Memory (MB): peak = 1821.738 ; gain = 142.668 ; free physical = 240 ; free virtual = 5349
+Synthesis Optimization Complete : Time (s): cpu = 00:00:15 ; elapsed = 00:00:17 . Memory (MB): peak = 1821.746 ; gain = 448.305 ; free physical = 240 ; free virtual = 5349
 INFO: [Project 1-571] Translating synthesized netlist
+INFO: [Netlist 29-17] Analyzing 16 Unisim elements for replacement
+INFO: [Netlist 29-28] Unisim Transformation completed in 0 CPU seconds
 INFO: [Project 1-570] Preparing netlist for logic optimization
 INFO: [Opt 31-138] Pushed 0 inverter(s) to 0 load pin(s).
-Netlist sorting complete. Time (s): cpu = 00:00:00 ; elapsed = 00:00:00 . Memory (MB): peak = 1735.406 ; gain = 0.000 ; free physical = 416 ; free virtual = 3412
+Netlist sorting complete. Time (s): cpu = 00:00:00 ; elapsed = 00:00:00 . Memory (MB): peak = 1821.746 ; gain = 0.000 ; free physical = 788 ; free virtual = 5895
 INFO: [Project 1-111] Unisim Transformation Summary:
 No Unisim elements were transformed.
 
 INFO: [Common 17-83] Releasing license: Synthesis
-18 Infos, 26 Warnings, 0 Critical Warnings and 0 Errors encountered.
+29 Infos, 106 Warnings, 0 Critical Warnings and 0 Errors encountered.
 synth_design completed successfully
-synth_design: Time (s): cpu = 00:00:08 ; elapsed = 00:00:10 . Memory (MB): peak = 1735.406 ; gain = 378.598 ; free physical = 471 ; free virtual = 3467
-Netlist sorting complete. Time (s): cpu = 00:00:00 ; elapsed = 00:00:00 . Memory (MB): peak = 1735.406 ; gain = 0.000 ; free physical = 471 ; free virtual = 3468
+synth_design: Time (s): cpu = 00:00:17 ; elapsed = 00:00:18 . Memory (MB): peak = 1821.746 ; gain = 448.402 ; free physical = 850 ; free virtual = 5956
+Netlist sorting complete. Time (s): cpu = 00:00:00 ; elapsed = 00:00:00 . Memory (MB): peak = 1821.746 ; gain = 0.000 ; free physical = 850 ; free virtual = 5956
 WARNING: [Constraints 18-5210] No constraints selected for write.
 Resolution: This message can indicate that there are no constraints for the design, or it can indicate that the used_in flags are set such that the constraints are ignored. This later case is used when running synth_design to not write synthesis constraints to the resulting checkpoint. Instead, project constraints are read when the synthesized design is opened.
-INFO: [Timing 38-35] Done setting XDC timing constraints.
 INFO: [Common 17-1381] The checkpoint '/home/petr/Projects/fpga/redpitaya/wrk/Smart_JTAG_cable/rtl/vivado/smart_jtag_cable.runs/processor_jtag_cable_comm_0_0_synth_1/processor_jtag_cable_comm_0_0.dcp' has been generated.
-write_checkpoint: Time (s): cpu = 00:00:06 ; elapsed = 00:00:07 . Memory (MB): peak = 2192.996 ; gain = 457.590 ; free physical = 125 ; free virtual = 3032
-INFO: [Coretcl 2-1174] Renamed 2 cell refs.
-Netlist sorting complete. Time (s): cpu = 00:00:00 ; elapsed = 00:00:00 . Memory (MB): peak = 2192.996 ; gain = 0.000 ; free physical = 165 ; free virtual = 2980
+INFO: [Coretcl 2-1174] Renamed 3 cell refs.
+Netlist sorting complete. Time (s): cpu = 00:00:00 ; elapsed = 00:00:00 . Memory (MB): peak = 1845.750 ; gain = 0.000 ; free physical = 851 ; free virtual = 5958
 WARNING: [Constraints 18-5210] No constraints selected for write.
 Resolution: This message can indicate that there are no constraints for the design, or it can indicate that the used_in flags are set such that the constraints are ignored. This later case is used when running synth_design to not write synthesis constraints to the resulting checkpoint. Instead, project constraints are read when the synthesized design is opened.
 INFO: [Common 17-1381] The checkpoint '/home/petr/Projects/fpga/redpitaya/wrk/Smart_JTAG_cable/rtl/vivado/smart_jtag_cable.runs/processor_jtag_cable_comm_0_0_synth_1/processor_jtag_cable_comm_0_0.dcp' has been generated.
 INFO: [runtcl-4] Executing : report_utilization -file processor_jtag_cable_comm_0_0_utilization_synth.rpt -pb processor_jtag_cable_comm_0_0_utilization_synth.pb
-INFO: [Common 17-206] Exiting Vivado at Sun Mar 24 21:33:40 2019...
+INFO: [Common 17-206] Exiting Vivado at Tue Mar 26 00:57:52 2019...

@@ -7,7 +7,6 @@
 preplace port tms -pg 1 -y 440 -defaultsOSRD
 preplace port DDR -pg 1 -y 70 -defaultsOSRD
 preplace port tdi -pg 1 -y 460 -defaultsOSRD
-preplace port reset_rtl -pg 1 -y 320 -defaultsOSRD
 preplace port tck -pg 1 -y 420 -defaultsOSRD
 preplace port tdo -pg 1 -y 470 -defaultsOSRD
 preplace port FIXED_IO -pg 1 -y 90 -defaultsOSRD
@@ -28,7 +27,6 @@ preplace netloc jtag_cable_comm_0_jtag_tck 1 4 1 NJ
 preplace netloc reset_rtl_0_1 1 0 2 NJ 400 230J
 preplace netloc processing_system7_0_FCLK_CLK0 1 0 5 20 260 NJ 260 NJ 260 NJ 260 1310
 preplace netloc ps7_0_axi_periph_M00_AXI 1 3 1 900
-preplace netloc reset_rtl_1 1 0 1 NJ
 preplace netloc rst_clk_wiz_100M_peripheral_aresetn 1 2 2 600 450 NJ
 preplace netloc clk_wiz_clk_out1 1 1 3 220 250 590 250 910
 levelinfo -pg 1 0 120 410 750 1110 1330 -top 0 -bot 530

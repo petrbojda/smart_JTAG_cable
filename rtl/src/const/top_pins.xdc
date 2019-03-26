@@ -1,14 +1,14 @@
-set_property PACKAGE_PIN T11 [get_ports TCK]
-set_property PACKAGE_PIN T10 [get_ports TDI]
-set_property PACKAGE_PIN T12 [get_ports TMS]
-set_property PACKAGE_PIN U12 [get_ports TDO]
-set_property IOSTANDARD LVCMOS33 [get_ports TCK]
-set_property IOSTANDARD LVCMOS33 [get_ports TDI]
-set_property IOSTANDARD LVCMOS33 [get_ports TDO]
-set_property IOSTANDARD LVCMOS33 [get_ports TMS]
+set_property PACKAGE_PIN G17 [get_ports jtag_tck]
+set_property PACKAGE_PIN G18 [get_ports jtag_tdo]
+set_property PACKAGE_PIN H16 [get_ports jtag_tms]
+set_property PACKAGE_PIN H17 [get_ports jtag_tdi]
+set_property IOSTANDARD LVCMOS33 [get_ports jtag_tck]
+set_property IOSTANDARD LVCMOS33 [get_ports jtag_tdo]
+set_property IOSTANDARD LVCMOS33 [get_ports jtag_tms]
+set_property IOSTANDARD LVCMOS33 [get_ports jtag_tdi]
 
-set_property PULLUP true [get_ports TCK]
-set_property PULLUP true [get_ports TDI]
-set_property PULLUP true [get_ports TMS]
-
+set_property PULLUP true [get_ports jtag_tck]
+set_property PULLUP true [get_ports jtag_tdi]
+set_property PULLUP true [get_ports jtag_tms]
+				       
 

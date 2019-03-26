@@ -12,3 +12,68 @@
 start_gui
 open_project /home/petr/Projects/fpga/redpitaya/wrk/Smart_JTAG_cable/rtl/vivado/smart_jtag_cable.xpr
 update_compile_order -fileset sources_1
+open_bd_design {/home/petr/Projects/fpga/redpitaya/wrk/Smart_JTAG_cable/rtl/vivado/smart_jtag_cable.srcs/sources_1/bd/processor/processor.bd}
+close_bd_design [get_bd_designs processor]
+update_module_reference processor_jtag_cable_comm_0_0
+close_bd_design [get_bd_designs processor]
+update_compile_order -fileset sources_1
+update_module_reference processor_jtag_cable_comm_0_0
+close_bd_design [get_bd_designs processor]
+set_property file_type {VHDL 2008} [get_files  /home/petr/Projects/fpga/redpitaya/wrk/Smart_JTAG_cable/rtl/src/hdl/jtag_engine.vhd]
+update_module_reference processor_jtag_cable_comm_0_0
+close_bd_design [get_bd_designs processor]
+update_module_reference processor_jtag_cable_comm_0_0
+update_compile_order -fileset sources_1
+update_module_reference processor_jtag_cable_comm_0_0
+launch_runs synth_1 -jobs 4
+wait_on_run synth_1
+reset_run processor_jtag_cable_comm_0_0_synth_1
+reset_run synth_1
+launch_runs synth_1 -jobs 4
+wait_on_run synth_1
+update_module_reference processor_jtag_cable_comm_0_0
+close_bd_design [get_bd_designs processor]
+reset_run synth_1
+launch_runs synth_1 -jobs 4
+wait_on_run synth_1
+open_bd_design {/home/petr/Projects/fpga/redpitaya/wrk/Smart_JTAG_cable/rtl/vivado/smart_jtag_cable.srcs/sources_1/bd/processor/processor.bd}
+add_files -fileset constrs_1 -norecurse /home/petr/Projects/fpga/redpitaya/wrk/Smart_JTAG_cable/rtl/src/const/top_pins.xdc
+reset_run synth_1
+launch_runs impl_1 -jobs 4
+wait_on_run impl_1
+open_run synth_1 -name synth_1
+write_xdc -force /home/petr/Projects/fpga/redpitaya/wrk/Smart_JTAG_cable/rtl/vivado/constrs_1.xdc
+open_bd_design {/home/petr/Projects/fpga/redpitaya/wrk/Smart_JTAG_cable/rtl/vivado/smart_jtag_cable.srcs/sources_1/bd/processor/processor.bd}
+startgroup
+set_property -dict [list CONFIG.USE_RESET {false}] [get_bd_cells clk_wiz]
+delete_bd_objs [get_bd_nets reset_rtl_1]
+endgroup
+delete_bd_objs [get_bd_ports reset_rtl]
+save_bd_design
+regenerate_bd_layout
+regenerate_bd_layout -routing
+regenerate_bd_layout
+validate_bd_design
+reset_target all [get_files  /home/petr/Projects/fpga/redpitaya/wrk/Smart_JTAG_cable/rtl/vivado/smart_jtag_cable.srcs/sources_1/bd/processor/processor.bd]
+export_ip_user_files -of_objects  [get_files  /home/petr/Projects/fpga/redpitaya/wrk/Smart_JTAG_cable/rtl/vivado/smart_jtag_cable.srcs/sources_1/bd/processor/processor.bd] -sync -no_script -force -quiet
+delete_ip_run [get_files -of_objects [get_fileset sources_1] /home/petr/Projects/fpga/redpitaya/wrk/Smart_JTAG_cable/rtl/vivado/smart_jtag_cable.srcs/sources_1/bd/processor/processor.bd]
+save_bd_design
+close_bd_design [get_bd_designs processor]
+close_design
+generate_target all [get_files  /home/petr/Projects/fpga/redpitaya/wrk/Smart_JTAG_cable/rtl/vivado/smart_jtag_cable.srcs/sources_1/bd/processor/processor.bd]
+catch { config_ip_cache -export [get_ips -all processor_processing_system7_0_0] }
+catch { config_ip_cache -export [get_ips -all processor_clk_wiz_0] }
+catch { config_ip_cache -export [get_ips -all processor_rst_clk_wiz_100M_0] }
+catch { config_ip_cache -export [get_ips -all processor_auto_pc_0] }
+export_ip_user_files -of_objects [get_files /home/petr/Projects/fpga/redpitaya/wrk/Smart_JTAG_cable/rtl/vivado/smart_jtag_cable.srcs/sources_1/bd/processor/processor.bd] -no_script -sync -force -quiet
+create_ip_run [get_files -of_objects [get_fileset sources_1] /home/petr/Projects/fpga/redpitaya/wrk/Smart_JTAG_cable/rtl/vivado/smart_jtag_cable.srcs/sources_1/bd/processor/processor.bd]
+launch_runs -jobs 4 {processor_jtag_cable_comm_0_0_synth_1 processor_clk_wiz_0_synth_1}
+export_simulation -of_objects [get_files /home/petr/Projects/fpga/redpitaya/wrk/Smart_JTAG_cable/rtl/vivado/smart_jtag_cable.srcs/sources_1/bd/processor/processor.bd] -directory /home/petr/Projects/fpga/redpitaya/wrk/Smart_JTAG_cable/rtl/vivado/smart_jtag_cable.ip_user_files/sim_scripts -ip_user_files_dir /home/petr/Projects/fpga/redpitaya/wrk/Smart_JTAG_cable/rtl/vivado/smart_jtag_cable.ip_user_files -ipstatic_source_dir /home/petr/Projects/fpga/redpitaya/wrk/Smart_JTAG_cable/rtl/vivado/smart_jtag_cable.ip_user_files/ipstatic -lib_map_path [list {modelsim=/home/petr/Projects/fpga/redpitaya/wrk/Smart_JTAG_cable/rtl/vivado/smart_jtag_cable.cache/compile_simlib/modelsim} {questa=/home/petr/Projects/fpga/redpitaya/wrk/Smart_JTAG_cable/rtl/vivado/smart_jtag_cable.cache/compile_simlib/questa} {ies=/home/petr/Projects/fpga/redpitaya/wrk/Smart_JTAG_cable/rtl/vivado/smart_jtag_cable.cache/compile_simlib/ies} {xcelium=/home/petr/Projects/fpga/redpitaya/wrk/Smart_JTAG_cable/rtl/vivado/smart_jtag_cable.cache/compile_simlib/xcelium} {vcs=/home/petr/Projects/fpga/redpitaya/wrk/Smart_JTAG_cable/rtl/vivado/smart_jtag_cable.cache/compile_simlib/vcs} {riviera=/home/petr/Projects/fpga/redpitaya/wrk/Smart_JTAG_cable/rtl/vivado/smart_jtag_cable.cache/compile_simlib/riviera}] -use_ip_compiled_libs -force -quiet
+reset_run synth_1
+launch_runs impl_1 -jobs 4
+wait_on_run impl_1
+open_run impl_1
+close_design
+file mkdir /home/petr/Projects/fpga/redpitaya/wrk/Smart_JTAG_cable/rtl/vivado/smart_jtag_cable.sdk
+write_hwdef -force  -file /home/petr/Projects/fpga/redpitaya/wrk/Smart_JTAG_cable/sdk/top_module.hdf
+launch_sdk -workspace /home/petr/Projects/fpga/redpitaya/wrk/Smart_JTAG_cable/sdk -hwspec /home/petr/Projects/fpga/redpitaya/wrk/Smart_JTAG_cable/sdk/top_module.hdf

@@ -1,10 +1,10 @@
 // Copyright 1986-2018 Xilinx, Inc. All Rights Reserved.
 // --------------------------------------------------------------------------------
 // Tool Version: Vivado v.2018.3 (lin64) Build 2405991 Thu Dec  6 23:36:41 MST 2018
-// Date        : Sun Mar 24 20:31:29 2019
+// Date        : Tue Mar 26 00:57:50 2019
 // Host        : petr-dell running 64-bit Ubuntu 18.04.2 LTS
-// Command     : write_verilog -force -mode funcsim -rename_top processor_clk_wiz_0 -prefix
-//               processor_clk_wiz_0_ processor_clk_wiz_0_sim_netlist.v
+// Command     : write_verilog -force -mode funcsim
+//               /home/petr/Projects/fpga/redpitaya/wrk/Smart_JTAG_cable/rtl/vivado/smart_jtag_cable.srcs/sources_1/bd/processor/ip/processor_clk_wiz_0/processor_clk_wiz_0_sim_netlist.v
 // Design      : processor_clk_wiz_0
 // Purpose     : This verilog netlist is a functional simulation representation of the design and should not be modified
 //               or synthesized. This netlist cannot be used for SDF annotated simulation.
@@ -15,33 +15,28 @@
 (* NotValidForBitStream *)
 module processor_clk_wiz_0
    (clk_out1,
-    reset,
     locked,
     clk_in1);
   output clk_out1;
-  input reset;
   output locked;
   input clk_in1;
 
   (* IBUF_LOW_PWR *) wire clk_in1;
   wire clk_out1;
   wire locked;
-  wire reset;
 
   processor_clk_wiz_0_processor_clk_wiz_0_clk_wiz inst
        (.clk_in1(clk_in1),
         .clk_out1(clk_out1),
-        .locked(locked),
-        .reset(reset));
+        .locked(locked));
 endmodule
 
+(* ORIG_REF_NAME = "processor_clk_wiz_0_clk_wiz" *) 
 module processor_clk_wiz_0_processor_clk_wiz_0_clk_wiz
    (clk_out1,
-    reset,
     locked,
     clk_in1);
   output clk_out1;
-  input reset;
   output locked;
   input clk_in1;
 
@@ -52,7 +47,6 @@ module processor_clk_wiz_0_processor_clk_wiz_0_clk_wiz
   wire clkfbout_buf_processor_clk_wiz_0;
   wire clkfbout_processor_clk_wiz_0;
   wire locked;
-  wire reset;
   wire NLW_mmcm_adv_inst_CLKFBOUTB_UNCONNECTED;
   wire NLW_mmcm_adv_inst_CLKFBSTOPPED_UNCONNECTED;
   wire NLW_mmcm_adv_inst_CLKINSTOPPED_UNCONNECTED;
@@ -170,7 +164,7 @@ module processor_clk_wiz_0_processor_clk_wiz_0_clk_wiz
         .PSEN(1'b0),
         .PSINCDEC(1'b0),
         .PWRDWN(1'b0),
-        .RST(reset));
+        .RST(1'b0));
 endmodule
 `ifndef GLBL
 `define GLBL

@@ -167,10 +167,6 @@ proc create_root_design { parentCell } {
   set FIXED_IO [ create_bd_intf_port -mode Master -vlnv xilinx.com:display_processing_system7:fixedio_rtl:1.0 FIXED_IO ]
 
   # Create ports
-  set reset_rtl [ create_bd_port -dir I -type rst reset_rtl ]
-  set_property -dict [ list \
-   CONFIG.POLARITY {ACTIVE_HIGH} \
- ] $reset_rtl
   set reset_rtl_0 [ create_bd_port -dir I -type rst reset_rtl_0 ]
   set_property -dict [ list \
    CONFIG.POLARITY {ACTIVE_LOW} \
@@ -182,6 +178,9 @@ proc create_root_design { parentCell } {
 
   # Create instance: clk_wiz, and set properties
   set clk_wiz [ create_bd_cell -type ip -vlnv xilinx.com:ip:clk_wiz:6.0 clk_wiz ]
+  set_property -dict [ list \
+   CONFIG.USE_RESET {false} \
+ ] $clk_wiz
 
   # Create instance: jtag_cable_comm_0, and set properties
   set block_name jtag_cable_comm
@@ -398,7 +397,6 @@ proc create_root_design { parentCell } {
   connect_bd_net -net jtag_cable_comm_0_jtag_tms [get_bd_ports tms] [get_bd_pins jtag_cable_comm_0/jtag_tms]
   connect_bd_net -net processing_system7_0_FCLK_CLK0 [get_bd_pins clk_wiz/clk_in1] [get_bd_pins processing_system7_0/FCLK_CLK0]
   connect_bd_net -net reset_rtl_0_1 [get_bd_ports reset_rtl_0] [get_bd_pins rst_clk_wiz_100M/ext_reset_in]
-  connect_bd_net -net reset_rtl_1 [get_bd_ports reset_rtl] [get_bd_pins clk_wiz/reset]
   connect_bd_net -net rst_clk_wiz_100M_peripheral_aresetn [get_bd_pins jtag_cable_comm_0/s_axi_aresetn] [get_bd_pins ps7_0_axi_periph/ARESETN] [get_bd_pins ps7_0_axi_periph/M00_ARESETN] [get_bd_pins ps7_0_axi_periph/S00_ARESETN] [get_bd_pins rst_clk_wiz_100M/peripheral_aresetn]
   connect_bd_net -net tdo_1 [get_bd_ports tdo] [get_bd_pins jtag_cable_comm_0/jtag_tdo]
 

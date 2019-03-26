@@ -1,7 +1,7 @@
 --Copyright 1986-2018 Xilinx, Inc. All Rights Reserved.
 ----------------------------------------------------------------------------------
 --Tool Version: Vivado v.2018.3 (lin64) Build 2405991 Thu Dec  6 23:36:41 MST 2018
---Date        : Sun Mar 24 21:32:34 2019
+--Date        : Tue Mar 26 00:57:02 2019
 --Host        : petr-dell running 64-bit Ubuntu 18.04.2 LTS
 --Command     : generate_target processor.bd
 --Design      : processor
@@ -611,7 +611,6 @@ entity processor is
     FIXED_IO_ps_clk : inout STD_LOGIC;
     FIXED_IO_ps_porb : inout STD_LOGIC;
     FIXED_IO_ps_srstb : inout STD_LOGIC;
-    reset_rtl : in STD_LOGIC;
     reset_rtl_0 : in STD_LOGIC;
     tck : out STD_LOGIC;
     tdi : out STD_LOGIC;
@@ -693,7 +692,6 @@ architecture STRUCTURE of processor is
   end component processor_processing_system7_0_0;
   component processor_clk_wiz_0 is
   port (
-    reset : in STD_LOGIC;
     clk_in1 : in STD_LOGIC;
     clk_out1 : out STD_LOGIC;
     locked : out STD_LOGIC
@@ -827,7 +825,6 @@ architecture STRUCTURE of processor is
   signal ps7_0_axi_periph_M00_AXI_WSTRB : STD_LOGIC_VECTOR ( 3 downto 0 );
   signal ps7_0_axi_periph_M00_AXI_WVALID : STD_LOGIC;
   signal reset_rtl_0_1 : STD_LOGIC;
-  signal reset_rtl_1 : STD_LOGIC;
   signal rst_clk_wiz_100M_peripheral_aresetn : STD_LOGIC_VECTOR ( 0 to 0 );
   signal tdo_1 : STD_LOGIC;
   signal NLW_processing_system7_0_FCLK_RESET0_N_UNCONNECTED : STD_LOGIC;
@@ -852,8 +849,6 @@ architecture STRUCTURE of processor is
   attribute X_INTERFACE_INFO of FIXED_IO_ps_clk : signal is "xilinx.com:display_processing_system7:fixedio:1.0 FIXED_IO PS_CLK";
   attribute X_INTERFACE_INFO of FIXED_IO_ps_porb : signal is "xilinx.com:display_processing_system7:fixedio:1.0 FIXED_IO PS_PORB";
   attribute X_INTERFACE_INFO of FIXED_IO_ps_srstb : signal is "xilinx.com:display_processing_system7:fixedio:1.0 FIXED_IO PS_SRSTB";
-  attribute X_INTERFACE_INFO of reset_rtl : signal is "xilinx.com:signal:reset:1.0 RST.RESET_RTL RST";
-  attribute X_INTERFACE_PARAMETER of reset_rtl : signal is "XIL_INTERFACENAME RST.RESET_RTL, INSERT_VIP 0, POLARITY ACTIVE_HIGH";
   attribute X_INTERFACE_INFO of reset_rtl_0 : signal is "xilinx.com:signal:reset:1.0 RST.RESET_RTL_0 RST";
   attribute X_INTERFACE_PARAMETER of reset_rtl_0 : signal is "XIL_INTERFACENAME RST.RESET_RTL_0, INSERT_VIP 0, POLARITY ACTIVE_LOW";
   attribute X_INTERFACE_INFO of DDR_addr : signal is "xilinx.com:interface:ddrx:1.0 DDR ADDR";
@@ -866,7 +861,6 @@ architecture STRUCTURE of processor is
   attribute X_INTERFACE_INFO of FIXED_IO_mio : signal is "xilinx.com:display_processing_system7:fixedio:1.0 FIXED_IO MIO";
 begin
   reset_rtl_0_1 <= reset_rtl_0;
-  reset_rtl_1 <= reset_rtl;
   tck <= jtag_cable_comm_0_jtag_tck;
   tdi <= jtag_cable_comm_0_jtag_tdi;
   tdo_1 <= tdo;
@@ -875,8 +869,7 @@ clk_wiz: component processor_clk_wiz_0
      port map (
       clk_in1 => processing_system7_0_FCLK_CLK0,
       clk_out1 => clk_wiz_clk_out1,
-      locked => clk_wiz_locked,
-      reset => reset_rtl_1
+      locked => clk_wiz_locked
     );
 jtag_cable_comm_0: component processor_jtag_cable_comm_0_0
      port map (
